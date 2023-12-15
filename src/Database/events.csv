@@ -1,0 +1,7 @@
+TIPO_SOLICITACAO;ANO;SEMESTRE;CURSO;DADO;QTD_VAGAS;HORARIO
+FIXA;2023;1;Engenharia de Software;Programação Avançada;30;Segunda 10h-12h, Quarta 10h-12h
+EVENTUAL;2023;1;História;Seminário sobre História Medieval;50;Terça 14h-16h
+FIXA;2023;1;Matemática;Cálculo III;25;Terça 08h-10h, Quinta 08h-10h
+EVENTUAL;2023;1;Biologia;Defesa de TCC de Genética;20;Quarta 16h-18h
+FIXA;2023;1;Física;Física Quântica;40;Segunda 14h-16h, Quinta 14h-16h
+EVENTUAL;2023;1;Engenharia Mecânica;Palestra sobre Robótica;60;Sexta 10h-12h
