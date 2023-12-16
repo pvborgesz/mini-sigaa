@@ -1,12 +1,15 @@
 package Contracts.AbstractEntities;
 
 
-public abstract class PhysicalSpace {
+import Enums.TypeEnum;
+
+public abstract class PhysicalSpace extends Space{
     protected String name;
     protected int capacity;
     protected String location;
 
-    public PhysicalSpace(String name, int capacity, String location) {
+    public PhysicalSpace(String name, int capacity, String location, String year, int semester, String course, int vacancies, String schedule) {
+        super(year, semester, course, vacancies, schedule, TypeEnum.CLASS);
         this.name = name;
         this.capacity = capacity;
         this.location = location;

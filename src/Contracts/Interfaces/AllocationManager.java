@@ -1,8 +1,10 @@
 package Contracts.Interfaces;
+
+import Contracts.AbstractEntities.Request;
+import Contracts.AbstractEntities.Space;
+
 public interface AllocationManager {
-    void readRequests(String filePath);
-    void allocateSpaces();
-    void saveAllocations(String filePath);
+    void allocateSpaces(Request[] requests, Space[] spaces);
     void loadAllocations(String filePath);
 }
 
