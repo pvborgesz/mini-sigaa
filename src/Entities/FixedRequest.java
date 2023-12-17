@@ -57,4 +57,9 @@ public class FixedRequest extends Request {
         System.out.println("Espaço desalocado com sucesso.");
     }
 
+
+    @Override
+    public String toString() {
+        return "Solicitação Fixa: " + super.toString() + ", Disciplina: " + this.discipline;
+    }
 }

@@ -56,18 +56,26 @@ public class FileHandlerImpl implements FileHandler {
 
 
     @Override
-   public void saveAllocations(String filePath) {
-       try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-           for (Request request : requests) {
-               if (request.getAllocatedSpace() != null) {
-                   bw.write(request.getAllocatedSpace().toString());
-                   bw.newLine();
-               }
-           }
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
-   }
+    public void saveAllocations(String filePath) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+            for (Request request : requests) {
+                if (request.getAllocatedSpace() != null) {
+                    String allocationInfo = formatAllocationInfo(request);
+                    bw.write(allocationInfo);
+                    bw.newLine();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String formatAllocationInfo(Request request) {
+        return String.format("Request: %s, Allocated Space: %s",
+                request.toString(),
+                request.getAllocatedSpace().toString());
+    }
+
 
     @Override
     public String toString() {

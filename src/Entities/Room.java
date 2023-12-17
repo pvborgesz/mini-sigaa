@@ -2,6 +2,7 @@ package Entities;
 
 
 import Contracts.AbstractEntities.PhysicalSpace;
+import Contracts.AbstractEntities.Request;
 
 //Uma classe para representar salas de aula, incluindo atributos como capacidade, nome e localização.
 public class Room extends PhysicalSpace {
@@ -12,5 +13,32 @@ public class Room extends PhysicalSpace {
     @Override
     public String toString() {
         return "Room{" + "name=" + name + ", capacity=" + capacity + ", location=" + location + '}';
+    }
+
+    @Override
+    public void allocateSpace(Request request) {
+        if (this.getVacancies() < request.getVacancies()) {
+            System.out.println("O espaço não possui vagas suficientes para a solicitação.");
+            return;
+        }
+
+        if (!this.getCourse().equals(request.getCourse())) {
+            System.out.println("O espaço não é adequado para o curso da solicitação.");
+            return;
+        }
+
+        if (!this.getSchedule().equals(request.getSchedule())) {
+            System.out.println("O espaço não é adequado para o horário da solicitação.");
+            return;
+        }
+
+        if (!this.getYear().equals(request.getYear())) {
+            System.out.println("O espaço não é adequado para o ano da solicitação.");
+            return;
+        }
+
+        // Alocando o espaço
+        request.setAllocatedSpace(this);
+        System.out.println("Espaço alocado com sucesso para a solicitação.");
     }
 }

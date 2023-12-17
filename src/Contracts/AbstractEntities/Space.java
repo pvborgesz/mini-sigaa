@@ -84,4 +84,20 @@ public abstract class Space {
     public void setType(TypeEnum type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Space{" +
+                "year='" + year + '\'' +
+                ", semester=" + semester +
+                ", course='" + course + '\'' +
+                ", discipline='" + discipline + '\'' +
+                ", finality='" + finality + '\'' +
+                ", vacancies=" + vacancies +
+                ", schedule='" + schedule + '\'' +
+                ", type=" + type +
+                '}';
+    }
+
+    public abstract void allocateSpace(Request request);
 }

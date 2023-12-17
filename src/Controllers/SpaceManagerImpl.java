@@ -48,8 +48,24 @@ public class SpaceManagerImpl implements SpaceManager {
     }
 
     private boolean isSpaceSuitable(Space space, Request request) {
-        // Implemente a lógica para determinar se o espaço é adequado
-        // Isso pode incluir verificar a capacidade, disponibilidade, etc.
-        return true; // Exemplo: sempre retorna verdadeiro (ajuste conforme necessário)
+
+        if (space.getVacancies() < request.getVacancies()) {
+            return false;
+        }
+
+        if (!space.getCourse().equals(request.getCourse())) {
+            return false;
+        }
+
+        if (!space.getSchedule().equals(request.getSchedule())) {
+            return false;
+        }
+
+        if (!space.getYear().equals(request.getYear())) {
+            return false;
+        }
+
+
+        return true;
     }
 }
