@@ -75,4 +75,9 @@ public class FileHandlerImpl implements FileHandler {
                 "requests=" + requests +
                 '}';
     }
+
+    public List<Request> getRequests() {
+        return requests;
+    }
+
 }
